@@ -9,13 +9,22 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <!-- Swiper JS -->
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <!-- Main Style -->
     <link rel="stylesheet" href="./CSS/styles.css">
+
 </head>
 
 <body>
     <div class="container">
-        <div class="container__top">
+        <div class="container__top" id="container__top">
             <div class="top__title">
                 <h1>Auditorium</h1>
                 <p><i class="fas fa-graduation-cap"></i> Elementary School</p>
@@ -64,9 +73,9 @@
                     </div>
                     <div class="bottom__description">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ab quod eos atque, nemo iste earum,
-                            alias quam rem quibusdam incidunt error commodi impedit 
+                            alias quam rem quibusdam incidunt error commodi impedit
                             magnam officia?
                         </p>
                     </div>
@@ -83,9 +92,9 @@
                     </div>
                     <div class="bottom__description">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ab quod eos atque, nemo iste earum,
-                            alias quam rem quibusdam incidunt error commodi impedit 
+                            alias quam rem quibusdam incidunt error commodi impedit
                             magnam officia?
                         </p>
                     </div>
@@ -102,22 +111,44 @@
                     </div>
                     <div class="bottom__description">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ab quod eos atque, nemo iste earum,
-                            alias quam rem quibusdam incidunt error commodi impedit 
+                            alias quam rem quibusdam incidunt error commodi impedit
                             magnam officia?
                         </p>
                     </div>
                 </div>
             </div>
-
         </div>
+
+
+
+
         <div class="container-bottom">
             <div class="top__title">
                 <h1>Project Images</h1>
                 <p><i class="fas fa-image"></i> Image gallery</p>
             </div>
-            <ul>
+
+            <div class="swiper-container showMobile">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg"
+                        alt="Picture of the project" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1602436709/small-libra_p0at5d.jpg"
+                        alt="Picture of the project" loading="lazy"></div>
+                    <div class="swiper-slide"> <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1604074284/darkSchool_zgnvss.jpg"
+                        alt="Picture of the project" loading="lazy"></div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+            </div>
+
+            <ul class="hideMobile">
                 <li>
                     <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1602436864/small-hs-plano_x3hktu.jpg"
                         alt="Picture of the project" loading="lazy">
@@ -170,10 +201,11 @@
                     <img src="https://res.cloudinary.com/duprwuo4j/image/upload/v1598505052/cdc-GDokEYnOfnE-unsplash_1_fmcyhc.jpg"
                         alt="Free Meal" loading="lazy">
                 </li>
-                
-                 <!-- Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens! 
+
+                <!-- Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens! 
                 <li></li> -->
             </ul>
+            
         </div>
     </div>
 
