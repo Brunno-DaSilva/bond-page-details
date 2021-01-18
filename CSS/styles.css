@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
 
 :root {
   --FISD-dark-blue: #184366;
@@ -24,12 +23,22 @@ body {
   justify-content: space-around;
   align-items: center;
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
+  background-color: #ffffff;
 }
 
-/* border: 1px solid red; */
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  min-height: 40vh;
+  margin-top: 1.5rem;
+  font-family: "Roboto", sans-serif !important;
+}
 
-.container {
+.containerApp {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -38,17 +47,35 @@ body {
   padding: 1rem 0;
 }
 
+/*
+=======================================
+==>        Top Information
+=======================================
+*/
+
 .container__top {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fafafa;
-  border-radius: 0.25rem;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
-.top__title {
+.top__info-isComplete {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.top__title,
+.isComplete {
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -57,32 +84,70 @@ body {
   padding: 0.5rem;
 }
 
+.top__title_middle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+.isComplete {
+  position: relative;
+  width: 15%;
+}
+
+.isComplete__label {
+  position: absolute;
+  z-index: 100;
+  width: 12.5rem;
+  height: 3rem;
+  top: 0;
+  right: 0;
+  background-color: var(--FISD-light-orange);
+  color: #e6e7e8;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
 .top__title h1 {
   font-size: 2.6rem;
   color: var(--FISD-dark-blue);
   letter-spacing: 1px;
   padding-bottom: 0.5rem;
-}
-.top__title p,
-.top__title i {
-  color: var(--FISD-light-blue);
-  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif !important;
 }
 
-.top__title i {
-  color: var(--FISD-light-orange);
+.top__title p,
+.top__title em {
+  color: var(--FISD-light-blue) !important;
+  font-size: 1.3rem !important;
+}
+
+.top__title em {
+  color: var(--FISD-light-orange) !important;
+  color: #e95b37 !important;
 }
 
 .top__img {
   height: 40rem;
   overflow: hidden;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 0.5rem;
 }
 .top__img img {
   width: 100%;
   object-fit: none;
-  object-position: bottom right;
+  object-position: right;
 }
 .top__info {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -95,46 +160,97 @@ body {
 .top__info-extra {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.7rem;
+}
+
+.info-extra__icon,
+.info-extra__title {
+  padding: 0.5rem 0.25rem;
+}
+
+.top__info-extra div p {
+  color: var(--FISD-light-blue);
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  font-family: "Roboto", sans-serif !important;
+}
+
+.info-extra__title {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.top__info-extra p:nth-child(odd) {
-  color: var(--FISD-dark-blue);
-  font-size: 1.2rem;
-  font-weight: 550;
-}
-.top__info-extra p i {
-  padding-right: 0.25rem;
-}
-.top__info-extra p:nth-child(even) {
+
+.info-extra__icon em {
+  font-size: 4rem;
   color: var(--FISD-light-blue);
-  margin: 0.5rem 0;
 }
+
+.top__info-extra div span {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--FISD-dark-blue);
+}
+
 .percentage {
   width: 100%;
   text-align: center;
-  background-color: var(--FISD-light-orange);
-  color: #fafafa !important;
+  background-color: transparent;
+  color: var(--FISD-light-blue) !important;
   border-radius: 0.25rem;
 }
 
-/*****************************
-      NEWS Section
-******************************/
+.top__description {
+  width: 90%;
+  padding: 1.5rem 1rem;
+  color: var(--FISD-dark-blue);
+  line-height: 2.6rem;
+  font-size: 1.9rem;
+  letter-spacing: 0.1rem;
+  text-align: left;
+}
+/*
+=======================================
+==>        UPDATE Section
+=======================================
+*/
 
 .container__middle {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 1.5rem;
+  padding: 2.5rem 5rem;
+  background-color: #184366;
+  background-image: linear-gradient(135deg, #184366 0%, #5ab3c4 100%);
+  overflow: hidden;
+}
+
+.middle-title h1 {
+  color: #f9f9f9 !important;
+}
+.middle-title p {
+  color: var(--FISD-yellow) !important;
+  color: #e8b20f !important;
+}
+.middle-title em {
+  color: var(--FISD-light-blue) !important;
+  color: #78d3c1 !important;
 }
 
 .middle__news {
-  width: 32%;
+  width: 31.5rem;
+  height: 38.5rem;
   border-radius: 0.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 15px 10px -15px #111;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  margin: 1rem 0.9rem;
 }
 
 .news__top {
@@ -145,7 +261,7 @@ body {
   width: 100%;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  border-bottom: 4px solid var(--FISD-light-orange);
+  border-bottom: 5px solid var(--FISD-light-orange);
 }
 
 .news__bottom {
@@ -153,27 +269,32 @@ body {
   padding: 1rem 0.5rem;
 }
 
-.bottom__title {
+.bottom__title h2 {
   color: var(--FISD-dark-blue);
   letter-spacing: 1px;
   padding: 1rem 0;
+  font-size: 1.8rem !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
-.bottom__description {
+.bottom__description p {
   color: var(--FISD-dark-blue);
   line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif !important;
 }
 
-/******************************
+/*
+=======================================
+==>     Project Image gallery  
+=======================================
+*/
 
-    Bottom Image gallery 
-
-******************************/
-
-.container-bottom {
+.container__bottom {
   width: 100%;
-  background-color: #fafafa;
-  border-radius: 0.25rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .showMobile {
@@ -214,17 +335,14 @@ img {
   }
 }
 
-/************************************
-
-                Mobile
-
-************************************/
+/*
+=======================================
+==>           Mobile 
+=======================================
+*/
 
 @media (max-aspect-ratio: 1/1) and (max-width: 580px) {
-  body {
-  }
-
-  .container {
+  .containerApp {
     width: 100%;
   }
 
@@ -298,10 +416,4 @@ img {
     width: 100%;
     height: 200px;
   }
-
-  /******************************
-  
-      Swiper End
-  
-  ******************************/
 }
