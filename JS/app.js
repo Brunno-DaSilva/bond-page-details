@@ -247,17 +247,11 @@ function init() {
     TitleId,
     PhotoDescription,
   }) => {
-    console.log(PhotoCollection);
     return `
     <div class="container-bottom">
-      <div class="top__title">
-        <h1>${TitleId}</h1>
-        <p>
-          <em class="fa fa-picture-o" aria-hidden="true"></em>${PhotoDescription}
-        </p>
-      </div>
+      
       <ul class="hideMobile">
-        <li>
+        <li class="swiper-slide">
           <img
             src="${PhotoCollection}"
             alt="${PhotoDescription}"
@@ -326,3 +320,25 @@ function init() {
 window.onload = () => {
   getData();
 };
+
+var mySwiper = new Swiper(".swiper-container", {
+  // Optional parameters
+  direction: "vertical",
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
