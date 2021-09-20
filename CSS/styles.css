@@ -143,8 +143,6 @@ body {
 }
 .top__img img {
   width: 100%;
-  object-fit: none;
-  object-position: right;
 }
 .top__info {
   width: 100%;
